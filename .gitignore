@@ -40,3 +40,18 @@
 # debug information files
 *.dwo
 /Debug/
+# === Eclipse project metadata ===
+.project
+.cproject
+.settings/
+# === Eclipse CDT index/cache ===
+.metadata/
+LanguageSettings.json
+language.settings.xml
+*.launch
+# CDT build configurations
+.build/
+Release/
+# === OS generated files ===
+.DS_Store
+Thumbs.db

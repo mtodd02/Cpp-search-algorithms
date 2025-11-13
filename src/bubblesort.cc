@@ -1,6 +1,6 @@
 #include "myheaders.h"
 using namespace std;
-#include "testinput.txt"
+
 #include <fstream>
 
 template<class T>

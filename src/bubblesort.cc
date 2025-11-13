@@ -1,6 +1,7 @@
 #include "myheaders.h"
 using namespace std;
-
+#include "testinput.txt"
+#include <fstream>
 
 template<class T>
 void bubblesort(T data[], int n) {

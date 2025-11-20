@@ -1,7 +1,4 @@
-#include <fstream>
-#include <iostream>
-
-using namespace std;
+#include "myheaders.h"
 
 // Merge function to merge two sorted subarrays into a single sorted array
 void merge(long data[], int left, int mid, int right) {

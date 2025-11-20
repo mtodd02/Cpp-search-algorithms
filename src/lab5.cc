@@ -119,7 +119,7 @@ int main() {
 			case 4: // sort c function -- selection sort
 
 		        	// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
-					for (i = 0; i < sz; i++) {
+					for (int i = 0; i < sz; i++) {
 						wdata[i] = data[i];
 					}
 		        

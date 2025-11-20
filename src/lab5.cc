@@ -188,7 +188,7 @@ int main() {
 						
 					// Call your Sort function B here to sort the array 'wData'
 					//  Note that 'wDdata' is of size 'sz' (see case 1).
-					quicksort(wdata, sz);
+					quicksort(wData, sz);
 
 					
 					end_time = clock();		// end cpu timer

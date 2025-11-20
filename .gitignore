@@ -55,3 +55,4 @@ Release/
 # === OS generated files ===
 .DS_Store
 Thumbs.db
+.settings/language.settings.xml

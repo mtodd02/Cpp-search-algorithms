@@ -1,47 +1,72 @@
-#include "myheaders.h"
+#include <fstream>
+#include <iostream>
 
-// Mergesort - recursively divides input array until we get sub-arrays of size 1
-void mergesort(long data[], long first, long last) {
-    if (first < last) {  // i.e. array is of size 2 or larger
-        long mid = (first + last) / 2;
+using namespace std;
 
-        mergesort(data, first, mid);      // Sort the left half
-        mergesort(data, mid + 1, last);   // Sort the right half
+// Merge function to merge two sorted subarrays into a single sorted array
+void merge(long data[], int left, int mid, int right) {
+    // Find the size of the two subarrays to be merged
+    int n1 = mid - left + 1;
+    int n2 = right - mid;
 
-        merge(data, first, mid, last);    // Merge the sorted halves
+    // Create temporary arrays for the left and right subarrays
+    long* leftArr = new long[n1];
+    long* rightArr = new long[n2];
+
+    // Copy data into temporary arrays leftArr[] and rightArr[]
+    for (int i = 0; i < n1; i++) {
+        leftArr[i] = data[left + i];
     }
+    for (int i = 0; i < n2; i++) {
+        rightArr[i] = data[mid + 1 + i];
+    }
+
+    // Merge the temporary arrays back into data[left..right]
+    int i = 0, j = 0, k = left;
+    while (i < n1 && j < n2) {
+        if (leftArr[i] <= rightArr[j]) {
+            data[k] = leftArr[i];
+            i++;
+        } else {
+            data[k] = rightArr[j];
+            j++;
+        }
+        k++;
+    }
+
+    // Copy the remaining elements of leftArr[], if any
+    while (i < n1) {
+        data[k] = leftArr[i];
+        i++;
+        k++;
+    }
+
+    // Copy the remaining elements of rightArr[], if any
+    while (j < n2) {
+        data[k] = rightArr[j];
+        j++;
+        k++;
+    }
+
+    // Clean up the temporary arrays
+    delete[] leftArr;
+    delete[] rightArr;
 }
 
-// Merge - merges left and right sub-arrays of the input array, in order
-void merge(long d[], long first, long mid, long last) {
-    long i1, i2, i3;
-    long tmp[last - first + 1];  // Temporary array for merged result
+// Merge Sort function that takes the data array and its size (sz)
+void mergeSort(long data[], int sz) {
+    // If sz is 1 or less, the array is already sorted
+    if (sz > 1) {
+        // Calculate the middle index based on sz
+        int mid = sz / 2;
 
-    i1 = 0;  // Start index of tmp[]
-    i2 = first;  // Start index of left sub-array (d[first..mid])
-    i3 = mid + 1;  // Start index of right sub-array (d[mid+1..last])
+        // Recursively sort the left half
+        mergeSort(data, mid);
 
-    // While both left and right sub-arrays have elements
-    while (i2 <= mid && i3 <= last) {
-        if (d[i2] < d[i3]) {
-            tmp[i1++] = d[i2++];
-        } else {
-            tmp[i1++] = d[i3++];
-        }
-    }
+        // Recursively sort the right half
+        mergeSort(data + mid, sz - mid);
 
-    // Copy remaining elements from the left sub-array if any
-    while (i2 <= mid) {
-        tmp[i1++] = d[i2++];
-    }
-
-    // Copy remaining elements from the right sub-array if any
-    while (i3 <= last) {
-        tmp[i1++] = d[i3++];
-    }
-
-    // Copy the merged result back into the original array
-    for (i1 = 0; i1 < (last - first + 1); ++i1) {
-        d[first + i1] = tmp[i1];
+        // Merge the sorted halves
+        merge(data, 0, mid - 1, sz - 1);
     }
 }

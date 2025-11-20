@@ -14,6 +14,9 @@ int		writefile(long data[], long size, string outfilename);
 void	swap(long& x, long& y);
 
 //function declerations
+void bubblesort(long data[], int n);
+void insertionsort(long data[], int n);
 void quicksort(long data[], int sz); 
 void selectionsort(long data[], int sz); 
-
+//void mergesort(long data[], int n);
+//void shellsort(long data[], int n); 

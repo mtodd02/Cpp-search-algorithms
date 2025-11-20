@@ -29,7 +29,6 @@ int main() {
 	long	data[MAXSIZE], wData[MAXSIZE];
 	double  begin_time, end_time, cpu_time_used;
 	string  ifilename, ofilename;
-	size_t n;
 	
 	while (1) {
 

@@ -57,7 +57,7 @@ int main() {
 
                     // First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
                     for (int i = 0; i < sz; i++) {
-                    	wdata[i] = data[i];
+                    	wData[i] = data[i];
                     }
                     
 					begin_time = clock();   // start cpu timer
@@ -65,7 +65,7 @@ int main() {
 					// Call your Sort function A here to sort the array 'wData''
 			        //  Note that 'wData' is of size 'sz' (see case 1).
 
-					insertionsort(wdata, sz);
+					insertionsort(wData, sz);
 			
 					end_time = clock();		// end cpu timer
 
@@ -88,14 +88,14 @@ int main() {
 			
 					// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
 					for (int i = 0; i < sz; i++) {
-						wdata[i] = data[i];
+						wData[i] = data[i];
 				     }
 			        
 					begin_time = clock();   // start cpu timer
 			
 					// Call your Sort function B here to sort the array 'wData'
 			        //  Note that 'wDdata' is of size 'sz' (see case 1).
-					bubblesort(wdata, sz);
+					bubblesort(wData, sz);
 
 			
 					end_time = clock();		// end cpu timer
@@ -120,14 +120,14 @@ int main() {
 
 		        	// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
 					for (int i = 0; i < sz; i++) {
-						wdata[i] = data[i];
+						wData[i] = data[i];
 					}
 		        
 					begin_time = clock();   // start cpu timer
 		
 					// Call your Sort function B here to sort the array 'wData'
 					//  Note that 'wDdata' is of size 'sz' (see case 1).
-					selectionsort(wdata, sz);
+					selectionsort(wData, sz);
 
 		
 					end_time = clock();		// end cpu timer
@@ -151,14 +151,14 @@ int main() {
 
 					// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
 					for (int i = 0; i < sz; i++) {
-						wdata[i] = data[i];
+						wData[i] = data[i];
 					}
 					        
 					begin_time = clock();   // start cpu timer
 					
 					// Call your Sort function B here to sort the array 'wData'
 					//  Note that 'wDdata' is of size 'sz' (see case 1).
-					mergesort(wdata, sz);
+					mergeSort(wData, sz);
 
 					
 					end_time = clock();		// end cpu timer
@@ -181,7 +181,7 @@ int main() {
 			case 6: // sort c function -- quick sort
 					// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
 					for (int i = 0; i < sz; i++) {
-						wdata[i] = data[i];
+						wData[i] = data[i];
 					}
 					        
 					begin_time = clock();   // start cpu timer
@@ -211,14 +211,14 @@ int main() {
 			case 7: // sort c function -- shell sort
 					// First, copy the contents of the array 'data' to the working array 'wData'. Your program should sort 'wData' and not 'data'.
 					for (int i = 0; i < sz; i++) {
-						wdata[i] = data[i];
+						wData[i] = data[i];
 					}
 								        
 					begin_time = clock();   // start cpu timer
 								
 				// Call your Sort function B here to sort the array 'wData'
 				//  Note that 'wDdata' is of size 'sz' (see case 1).
-					shellsort(wdata, sz);
+					Shellsort(wData, sz);
 
 								
 					end_time = clock();		// end cpu timer

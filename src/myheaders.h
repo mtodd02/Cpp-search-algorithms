@@ -19,8 +19,5 @@ void insertionsort(long data[], int n);
 void quicksort(long data[], int sz); 
 void selectionsort(long data[], int sz); 
 //void mergesort(long data[], int n);
-void shellsort(long data[], int n);
-<<<<<<< HEAD
+void Shellsort(long data[], int n);
 
-=======
->>>>>>> branch 'main' of git@github.com:mtodd02/Cpp-search-algorithms.git
